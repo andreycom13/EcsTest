@@ -32,6 +32,7 @@ namespace Client
 #endif
             _systems
                 .Add(new InputSystem())
+                .Add(new ClickPointSystem())
                 .Add(new PlayerControlSystem())
                 .Add(new MoveSystem())
                 .OneFrame<MouseDownEvent>()
