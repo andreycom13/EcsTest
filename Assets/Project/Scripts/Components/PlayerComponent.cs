@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.AI;
 
 namespace Client
 {
-    internal struct PlayerComponents
+    internal struct PlayerComponent
     {
         public NavMeshAgent agent;
         public Animator animator;

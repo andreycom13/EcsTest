@@ -1,20 +1,18 @@
-﻿using Leopotam.Ecs;
-using UnityEngine;
+using Leopotam.Ecs;
 
 namespace Client
 {
-    internal class MoveSystem : IEcsSystem, IEcsRunSystem
+    internal class MoveSystem : IEcsRunSystem
     {
-        Player player;
-        EcsFilter<MouseDownEvent> mouseEventFilter;
-        EcsFilter<PlayerComponents> playerComponentsFilter;
+        private readonly EcsFilter<MouseDownEvent> mouseEventFilter = null;
+        private readonly EcsFilter<PlayerComponent> playerComponentsFilter = null;
 
         public void Run()
         {
-            foreach (var index in mouseEventFilter)
+            foreach (int index in mouseEventFilter)
             {
                 ref var mouseEvent = ref mouseEventFilter.Get1(index);
-                foreach (var playerIndex in playerComponentsFilter)
+                foreach (int playerIndex in playerComponentsFilter)
                 {
                     ref var components = ref playerComponentsFilter.Get1(index);
                     components.agent.SetDestination(mouseEvent.hitPosition);
