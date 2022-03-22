@@ -8,15 +8,6 @@ public class Player : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Animator animator;
 
-    private void Update()
-    {
-        if (agent.velocity.magnitude > 0.1f) animator.SetBool("IsRun", true);
-        else animator.SetBool("IsRun", false);
-        agent.updateRotation = true;
-    }
-
-    public void SetMovePoint(Vector3 point)
-    {
-        agent.SetDestination(point);
-    }
+    public NavMeshAgent GetNavMeshAgent { get { return agent; } }
+    public Animator GetAnimator { get { return animator; } }
 }

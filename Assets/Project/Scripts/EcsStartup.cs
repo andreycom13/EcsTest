@@ -19,6 +19,7 @@ namespace Client {
 #endif
             _systems
                 .Add(new InputSystem())
+                .Add(new PlayerControlSystem())
                 .Add(new MoveSystem())
                 .OneFrame<MouseDownEvent>()
                 .Inject (player)
